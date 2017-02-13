@@ -57,10 +57,10 @@ export default class LoginForm extends Component {
     const result = encryption.checkAccount(this.state.email, this.state.password);
 
     if (this.state.email !== "" && !result.emailExists) {
-        this.emailExists = false;
-        this.setState({
-          emailStyle: this.inputInvalid
-        });
+      this.emailExists = false;
+      this.setState({
+        emailStyle: this.inputInvalid
+      });
     }
 
     else if (this.state.password !== "" && !result.loginSuccessful) {
@@ -107,9 +107,9 @@ export default class LoginForm extends Component {
           <label className="uk-form-label label-invalid" hidden={!this.emptyFields}>Please make sure all fields are filled out</label>
           <div className="uk-margin">
             <div className="uk-form-controls">
-              <input name="email" className={this.state.emailStyle} type="text" placeholder="E-mail" value={this.state.email} onChange={this.handleInputChange} />
+              <input name="email" className={this.state.emailStyle} type="text" placeholder="E-mail / Username" value={this.state.email} onChange={this.handleInputChange} />
             </div>
-            <label className="uk-form-label label-invalid" hidden={this.emailExists}>No account exists with that e-mail address</label>
+            <label className="uk-form-label label-invalid" hidden={this.emailExists}>No account exists with that e-mail address / username</label>
           </div>
           <div className="uk-margin">
             <div className="uk-form-controls">

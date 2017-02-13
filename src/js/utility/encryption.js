@@ -1,4 +1,5 @@
-var crypto = require('crypto');
+const axios = require('axios');
+const crypto = require('crypto');
 
 module.exports = {
 
@@ -41,12 +42,18 @@ module.exports = {
       the database, then the user entered the correct password.
     */
 
+    axios.get('https://uno-shareboard-dev.herokuapp.com/service/v1/stringResponseCustom?name=' + email)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
     const output = this.createHash(pass, salt);
 
     const emailExists = email in accounts;
-    let passwordCorrect = false;
-    if (emailExists)
-      passwordCorrect = accounts[email] === output.hash;
+    const passwordCorrect = emailExists && accounts[email] === output.hash;
 
     return {
       emailExists: emailExists,
