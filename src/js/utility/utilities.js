@@ -1,4 +1,6 @@
 var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
+var AsYouTypeFormatter = require('google-libphonenumber').AsYouTypeFormatter;
+var formatter = new AsYouTypeFormatter('US');
 
 module.exports = {
 
