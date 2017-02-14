@@ -1,6 +1,4 @@
-var phoneUtil = require('google-libphonenumber').PhoneNumberUtil.getInstance();
-var AsYouTypeFormatter = require('google-libphonenumber').AsYouTypeFormatter;
-var formatter = new AsYouTypeFormatter('US');
+const validator = require('validator');
 
 module.exports = {
 
@@ -12,7 +10,8 @@ module.exports = {
 
   validatePhone: function(number) {
     try {
-      return phoneUtil.parse(number, 'US');
+      const stripped = validator.blacklist(number, '-(). ');
+      return validator.isMobilePhone(stripped, 'en-US');
     }
     catch (err) {
       return false;

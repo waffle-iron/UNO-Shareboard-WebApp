@@ -103,7 +103,7 @@ export default class LoginForm extends Component {
     return (
       <form className="uk-form-stacked" onSubmit={this.handleSubmit}>
         <fieldset className="uk-fieldset">
-          <legend className="uk-legend landing-header">Login</legend>
+          <legend className="uk-legend uk-text-center">Login</legend>
           <label className="uk-form-label label-invalid" hidden={!this.emptyFields}>Please make sure all required fields are filled out</label>
           <div className="uk-margin">
             <div className="uk-form-controls">

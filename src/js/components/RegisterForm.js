@@ -151,7 +151,7 @@ export default class RegisterForm extends Component {
     return (
       <form className="uk-form-stacked" onSubmit={this.handleSubmit}>
         <fieldset className="uk-fieldset">
-          <legend className="uk-legend landing-header">Register</legend>
+          <legend className="uk-legend uk-text-center">Register</legend>
           <label className="uk-form-label label-invalid" hidden={!this.emptyFields}>Please make sure all required fields are filled out</label>
           <div className="uk-margin">
             <div className="uk-form-controls">
